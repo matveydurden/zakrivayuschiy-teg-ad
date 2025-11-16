@@ -9,7 +9,6 @@
 ✦ card__icon-button — для кнопки, оборачивающей иконку
 ✦ is-liked — для обозначения состояния лайкнутой иконки в виде сердца
 ✦ button__text — для обозначения текстового элемента внутри кнопки
-
 Кроме этого, не меняйте HTML переключателя тем. Его разметка также гарантирует работу своего скрипта.
 
 */
@@ -369,4 +368,9 @@
     -webkit-text-stroke: 1px var(--page-background-color, #ffffff);
     text-stroke: 1px var(--page-background-color, #ffffff);
   }
+}
+
+.page {
+  min-inline-size: 320px;
+  min-block-size: 100dvb;
 }
