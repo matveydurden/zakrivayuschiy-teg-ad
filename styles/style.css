@@ -6,68 +6,67 @@
 ✦ like-icon — для svg-иконки анимированного сердца
 ✦ card__like-button — для кнопки Like рядом с иконкой
 ✦ card__icon-button — для кнопки, оборачивающей иконку
-✦ card__icon-button — для кнопки, оборачивающей иконку
 ✦ is-liked — для обозначения состояния лайкнутой иконки в виде сердца
 ✦ button__text — для обозначения текстового элемента внутри кнопки
 Кроме этого, не меняйте HTML переключателя тем. Его разметка также гарантирует работу своего скрипта.
 
 */
 
-.filter-grayscale {
+.image-filter--grayscale {
   filter: grayscale(70%);
 }
 
-.filter-multiple {
+.image-filter--mixed {
   filter: contrast(50%) hue-rotate(35deg) saturate(130%);
 }
 
-.filter-hue-rotate {
+.image-filter--hue {
   filter: hue-rotate(210deg);
 }
 
-.filter-saturate {
+.image-filter--saturate {
   filter: saturate(250%);
 }
 
-.filter-invert {
+.image-filter--invert {
   filter: invert(100%);
 }
 
-.filter-sepia {
+.image-filter--sepia {
   filter: sepia(90%);
 }
 
-.filter-blur {
+.image-filter--blur {
   filter: blur(10px);
 }
 
 .page {
+  min-inline-size: 320px;
+  min-block-size: 100dvb;
   padding-block-start: 100px;
   color: var(--text-color, #000000);
   font-family: var(--page-main-font-family, "Inter", sans-serif);
+  font-variation-settings: "wght" var(--page-main-font-weight, 400);
   background-color: var(--page-background-color, #ffffff);
   background-image: var(--page-background-image, none);
   background-size: cover;
   background-attachment: fixed;
-  font-variation-settings: "wght" var(--page-main-font-weight, 400);
-  min-inline-size: 320px;
-  min-block-size: 100dvb;
-}
+} 
 
 .page__header {
   margin-block-end: 100px;
 }
 
 .modal {
-  border: 2px solid var(--text-color, #000000);
+  max-inline-size: 355px;
   padding: 25px 30px;
+  border: 2px solid var(--text-color, #000000);
+  background: var(--page-background-color, #ffffff);
   color: var(--text-color, #000000);
   font-family: var(--page-accent-font-family, "PressStart2P", fantasy);
   line-height: 1.5;
   text-transform: uppercase;
-  background: var(--page-background-color, #ffffff);
-  max-inline-size: 355px;
-}
+} 
 
 .modal[open] {
   display: grid;
@@ -103,12 +102,12 @@
 
 .header {
   display: grid;
-  justify-items: center;
   justify-content: center;
+  justify-items: center;
   font-family: var(--page-accent-font-family, "PressStart2P", fantasy);
   line-height: normal;
   text-transform: uppercase;
-}
+} 
 
 .header__title {
   margin-block-start: clamp(7.5rem, 7.1479rem + 1.5023vw, 8.5rem);
@@ -127,18 +126,18 @@
   display: grid;
   gap: 8px;
   padding-inline-start: 20px;
-}
+} 
 
 .theme-menu__button {
   position: relative;
   border: none;
+  background: transparent;
   font-size: 14px;
   text-transform: uppercase;
-  background: transparent;
-  transition: opacity 0.3s ease;
   cursor: pointer;
+  transition: opacity 0.3s ease;
   appearance: none;
-}
+} 
 
 .theme-menu__button:not(:disabled)::after {
   content: "";
@@ -184,19 +183,19 @@
   justify-items: center;
   gap: 57px;
   padding-block-end: 105px;
-}
+} 
 
 .cards-list {
   display: grid;
   gap: 52px;
-}
+} 
 
 .card {
   margin-inline: auto;
+  max-inline-size: 696px;
   border: 2px solid var(--text-color, #000000);
   background: var(--page-background-color, #ffffff);
-  max-inline-size: 696px;
-}
+} 
 
 .card__header {
   border-block-end: 2px solid var(--text-color, #000000);
@@ -211,46 +210,41 @@
 
 .card__img-wrapper {
   position: relative;
-  /* overflow - для коррекции эффектов filter blur */
   overflow: hidden;
-}
+} 
 
 .card__img-label {
   position: absolute;
   z-index: 1;
-
   opacity: 0.5;
-
-  color: var(--text-color, #000000);
-  font-family: var(--page-accent-font-family, "PressStart2P", fantasy);
-
-  font-size: 14px;
-  line-height: normal;
-
-  text-transform: uppercase;
-  text-shadow: 0 0 1px var(--page-background-color, #ffffff);
   inset-inline-end: 13px;
   inset-block-start: 24px;
-
+  color: var(--text-color, #000000);
+  font-family: var(--page-accent-font-family, "PressStart2P", fantasy);
+  font-size: 14px;
+  line-height: normal;
+  text-transform: uppercase;
+  text-shadow: 0 0 1px var(--page-background-color, #ffffff);
   mix-blend-mode: hard-light;
-}
+} 
 
 .card__img {
   display: block;
+  inline-size: 100%;
+  block-size: auto;
   object-fit: cover;
   object-position: center;
-  inline-size: 100%;
   aspect-ratio: 1 / 1;
-}
+} 
 
 .card__content {
   display: grid;
   gap: 27px;
-  border-block-start: 2px solid var(--text-color, #000000);
   padding: 25px 30px 0 25px;
+  border-block-start: 2px solid var(--text-color, #000000);
   font-size: 18px;
   line-height: calc(21 / 18);
-}
+} 
 
 .card__footer {
   display: flex;
@@ -258,17 +252,17 @@
   align-items: stretch;
   gap: 5px;
   padding: 25px 25px 23px 25px;
-}
+} 
 
 .card__icon-button {
   display: grid;
   border: 2px solid transparent;
   padding: 0;
   background: transparent;
-  transition: border-color 0.3s ease;
   cursor: pointer;
+  transition: border-color 0.3s ease;
   appearance: none;
-}
+} 
 
 .card__icon-button:focus {
   outline: none;
@@ -283,14 +277,14 @@
   z-index: 1;
   border: 2px solid var(--text-color, #000000);
   padding: 10px 36px;
+  background: var(--page-background-color, #ffffff);
+  cursor: pointer;
   font-family: var(--page-accent-font-family, "PressStart2P", fantasy);
   font-size: 14px;
   text-transform: inherit;
-  background: var(--page-background-color, #ffffff);
   transition: box-shadow 0.3s ease;
-  cursor: pointer;
   appearance: none;
-}
+} 
 
 .button:focus {
   outline: none;
@@ -324,13 +318,13 @@
   align-items: center;
   gap: 10px;
   padding: 15px 20px;
-}
+} 
 
 .button__text,
 .button__icon {
   color: var(--button-text-color, #ffffff);
   mix-blend-mode: difference;
-}
+} 
 
 .button__icon {
   block-size: 22px;
@@ -338,11 +332,10 @@
 }
 
 .like-icon {
-  block-size: 36px;
   inline-size: 39px;
-}
+  block-size: 36px;
+} 
 
-/* 376 взято так как в фигме на 375 уже стоят определенные стили, а при использовании width <= 375px 375 все еще включает в себя стили для значений больше 375 ???? */
 @media (width < 376px) {
   .modal {
     padding: 28px 34px 28px 40px;
@@ -370,7 +363,3 @@
   }
 }
 
-.page {
-  min-inline-size: 320px;
-  min-block-size: 100dvb;
-}
